@@ -1,0 +1,16 @@
+const express = require('express');
+const cors = require('cors');
+const app = express();
+const port = 5000;
+
+app.use(cors());
+
+app.get('/api/data', (req, res) => {
+  res.json([
+    { id: 1, name: 'Arya' },
+    { id: 2, name: 'Pradeep' },
+    { id: 3, name: 'Akash' }
+  ]);
+});
+
+app.listen(port, () => console.log(`Server running on http://localhost:${port}`));
